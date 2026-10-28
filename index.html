@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quá Hay — Những điều thú vị &amp; sự thật bị hiểu lầm</title>
+  <meta name="description" content="Tuyển tập những điều thú vị và các lầm tưởng phổ biến, được kiểm chứng bằng nguồn tham khảo và minh họa bằng nét vẽ phát sáng. Chủ đề cho mọi bàn nhậu và bữa tiệc.">
+  <meta property="og:title" content="Quá Hay — Những điều thú vị & sự thật bị hiểu lầm">
+  <meta property="og:description" content="Maslow không vẽ kim tự tháp, Napoleon không thấp, Vạn Lý Trường Thành không thấy được từ Mặt Trăng… và nhiều hơn nữa.">
+  <meta name="theme-color" content="#080C16">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home" data-theme="space" data-root="">
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="tag">Phòng thí nghiệm của sự tò mò</span>
+        <h1 style="margin-top:18px">Điều bạn tin<br>có thể <em>sai</em>.<br>Và điều đó<br><em>quá hay</em>.</h1>
+        <p class="lead">Những lầm tưởng ai cũng từng nghe, những chi tiết nhỏ ít ai để ý, được kiểm chứng bằng tài liệu gốc và kể lại bằng nét vẽ phát sáng. Mỗi chủ đề đủ dài để bạn mang ra bàn nhậu và tranh luận đến khi hết bia.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#kham-pha">Bắt đầu khám phá
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+          <button class="btn ghost" type="button" data-open-search>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Tìm chủ đề</button>
+        </div>
+        <div class="hero-stats" id="hero-stats"></div>
+      </div>
+      <div class="hero-art">
+        <svg id="hero-orbit" class="art draw" viewBox="0 0 500 500" role="img" aria-label="Sơ đồ quỹ đạo các chủ đề"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES + GRID -->
+  <section class="section" id="danh-muc">
+    <div class="wrap">
+      <div class="section-head" id="kham-pha">
+        <div>
+          <span class="eyebrow">Thư viện chủ đề</span>
+          <h2>Chọn một điều để nghi ngờ</h2>
+        </div>
+        <p>Lọc theo danh mục: màu nền sẽ đổi theo bảng màu của từng lĩnh vực. Gõ không dấu cũng tìm được.</p>
+      </div>
+      <label class="home-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="sr-only">Tìm trong thư viện</span>
+        <input id="home-q" type="search" placeholder="Thử gõ: “nasa”, “bia”, “lich su”, “nao”…" autocomplete="off">
+      </label>
+      <div class="chips" id="chips" role="group" aria-label="Lọc theo danh mục" style="margin:22px 0 28px"></div>
+      <div class="grid" id="grid"></div>
+      <p id="grid-empty" class="search-empty" hidden></p>
+    </div>
+  </section>
+
+  <!-- SCROLL STORY -->
+  <section class="story" aria-label="Lướt nhanh qua từng chủ đề">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Cuộn để đổi màu</span>
+          <h2>Lầm tưởng · Sự thật</h2>
+        </div>
+        <p>Phiên bản rút gọn để bạn “khoe” trong 30 giây. Bấm vào từng chủ đề để có đủ lý lẽ cho 30 phút tiếp theo.</p>
+      </div>
+      <div id="story"></div>
+    </div>
+  </section>
+
+  <!-- RECAP -->
+  <section class="section" id="tong-ket" data-zone="space">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Tổng kết</span>
+          <h2>Những câu chuyện đáng lưu lại</h2>
+        </div>
+        <p>Một câu cho mỗi chủ đề: điều cần nhớ nếu bạn chỉ có một hơi để nói.</p>
+      </div>
+      <div class="recap" id="recap"></div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/vendor/fuse.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script>
+(function () {
+  const { categories, topics, icons } = QH;
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const cs = (k) => `--c:${categories[k].primary};--c2:${categories[k].accent}`;
+
+  /* Hero stats */
+  const usedCats = Object.keys(categories).filter((k) => topics.some((t) => t.cat === k));
+  const minutes = topics.reduce((s, t) => s + t.read, 0);
+  document.getElementById("hero-stats").innerHTML =
+    `<div><b>${topics.length}</b>chủ đề</div><div><b>${usedCats.length}</b>danh mục</div><div><b>${minutes}’</b>đọc &amp; tranh luận</div>`;
+
+  /* Hero orbit: one glowing node per topic */
+  const cx = 250, cy = 250, R = 188;
+  let nodes = "";
+  topics.forEach((t, i) => {
+    const a = -Math.PI / 2 + (i / topics.length) * Math.PI * 2;
+    const x = cx + R * Math.cos(a), y = cy + R * Math.sin(a);
+    const c = categories[t.cat];
+    const side = Math.cos(a) > 0.3 ? 1 : Math.cos(a) < -0.3 ? -1 : 0;
+    const lx = x, ly = side ? y + 52 : y + (Math.sin(a) < 0 ? -44 : 54);
+    const label = t.short.length > 16 ? t.short.split(" ").slice(-2).join(" ") : t.short;
+    nodes += `
+      <line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="${c.primary}" stroke-opacity=".25" stroke-dasharray="2 6" class="nodraw-line"/>
+      <a href="${t.url}" class="hero-node" data-cat="${t.cat}" aria-label="${esc(t.title)}" style="${cs(t.cat)}">
+        <circle class="node-ring" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="34" stroke="${c.primary}" style="filter:drop-shadow(0 0 6px ${c.primary})"/>
+        <svg x="${(x - 22).toFixed(1)}" y="${(y - 22).toFixed(1)}" width="44" height="44" viewBox="0 0 64 64" class="nodraw" style="filter:drop-shadow(0 0 4px ${c.primary})">${icons[t.icon].replace(/^<svg[^>]*>|<\/svg>$/g, "")}</svg>
+        <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" class="node-lbl" fill="${c.primary}" stroke="none">${esc(label)}</text>
+      </a>`;
+  });
+  document.getElementById("hero-orbit").innerHTML = `
+    <g class="orbit-rev"><circle class="m" cx="250" cy="250" r="230" stroke-dasharray="1 9"/></g>
+    <g class="orbit"><circle class="m" cx="250" cy="250" r="${R}"/><circle class="fp" cx="${cx + R}" cy="${cy}" r="3"/><circle class="fa" cx="${cx - R}" cy="${cy}" r="2.5"/></g>
+    <circle class="m" cx="250" cy="250" r="120" stroke-dasharray="4 10"/>
+    <g class="glow">
+      <circle class="p" cx="240" cy="238" r="58"/>
+      <path class="p" d="M282 280l46 46" stroke-width="4"/>
+      <path class="a" d="M214 236l18 18 34-38"/>
+      <path class="a" d="M208 210a40 40 0 0 1 22-18" opacity=".6"/>
+    </g>
+    ${nodes}`;
+  document.querySelectorAll(".hero-node").forEach((n) => {
+    n.addEventListener("mouseenter", () => (document.body.dataset.theme = n.dataset.cat));
+    n.addEventListener("focus", () => (document.body.dataset.theme = n.dataset.cat));
+  });
+
+  /* Grid of cards */
+  const grid = document.getElementById("grid");
+  grid.innerHTML = topics.map((t) => `
+    <a class="card reveal" href="${t.url}" data-slug="${t.slug}" data-cat="${t.cat}" style="${cs(t.cat)}">
+      <div class="card-art">${icons[t.icon]}</div>
+      <span class="tag">${esc(categories[t.cat].name)}</span>
+      <h3>${esc(t.title)}</h3>
+      <p class="myth"><b>Lầm tưởng:</b> ${esc(t.myth)}</p>
+      <div class="meta"><span>${t.read} phút đọc</span><span>Đọc sự thật →</span></div>
+    </a>`).join("");
+  grid.querySelectorAll(".card-art svg").forEach((s) => s.classList.add("draw"));
+
+  /* Category chips + search filter */
+  const chips = document.getElementById("chips");
+  const counts = (k) => topics.filter((t) => t.cat === k).length;
+  chips.innerHTML = `<button class="chip" data-cat="all" aria-pressed="true" style="--c:#F8FAFC"><i></i>Tất cả <small>${topics.length}</small></button>` +
+    Object.entries(categories).map(([k, c]) => {
+      const n = counts(k);
+      return `<button class="chip" data-cat="${k}" aria-pressed="false" style="${cs(k)}" ${n ? "" : 'disabled title="Sắp có"'}><i></i>${esc(c.name)} <small>${n || "sắp có"}</small></button>`;
+    }).join("");
+  chips.querySelectorAll("[disabled]").forEach((b) => (b.style.opacity = ".45"));
+
+  const q = document.getElementById("home-q"), empty = document.getElementById("grid-empty");
+  let cat = "all";
+  function apply() {
+    const hits = new Set((q.value.trim() ? QH.search(q.value) : topics).map((t) => t.slug));
+    let shown = 0;
+    grid.querySelectorAll(".card").forEach((c) => {
+      const ok = hits.has(c.dataset.slug) && (cat === "all" || c.dataset.cat === cat);
+      c.hidden = !ok;
+      if (ok) { shown++; c.classList.add("is-in"); c.querySelector(".draw")?.classList.add("is-drawn"); }
+    });
+    empty.hidden = shown > 0;
+    empty.textContent = shown ? "" : `Chưa có chủ đề nào khớp “${q.value}”${cat !== "all" ? " trong danh mục này" : ""}.`;
+  }
+  function setCat(k, push) {
+    cat = k;
+    chips.querySelectorAll(".chip").forEach((b) => b.setAttribute("aria-pressed", b.dataset.cat === k));
+    document.body.dataset.theme = k === "all" ? "space" : k;
+    if (push) history.replaceState(null, "", k === "all" ? location.pathname + "#danh-muc" : `?cat=${k}#danh-muc`);
+    apply();
+  }
+  chips.addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b && !b.disabled) setCat(b.dataset.cat, true); });
+  q.addEventListener("input", apply);
+  q.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") { const first = grid.querySelector(".card:not([hidden])"); if (first) location.href = first.href; }
+  });
+  document.addEventListener("qh:ready", () => {
+    const k = new URLSearchParams(location.search).get("cat");
+    if (k && categories[k] && counts(k)) setCat(k, false);
+  });
+
+  /* Scroll story: each item switches the page palette */
+  document.getElementById("story").innerHTML = topics.map((t, i) => `
+    <article class="story-item" data-zone="${t.cat}">
+      <div class="reveal">
+        <div class="story-num">${String(i + 1).padStart(2, "0")}</div>
+        <span class="tag">${esc(categories[t.cat].name)}</span>
+        <h3>${esc(t.title)}</h3>
+        <div class="vs">
+          <div class="is-myth"><b>Lầm tưởng</b>${esc(t.myth)}</div>
+          <div class="is-fact"><b>Sự thật</b>${esc(t.fact)}</div>
+        </div>
+        <a class="btn ghost" href="${t.url}">Đọc toàn bộ câu chuyện →</a>
+      </div>
+      <div class="story-art">
+        <svg class="art draw glow" viewBox="0 0 400 400" aria-hidden="true">
+          <circle class="m" cx="200" cy="200" r="180" stroke-dasharray="2 8"/>
+          <circle class="a" cx="200" cy="200" r="150" opacity=".35"/>
+          <path class="p" d="M200 20v30M200 350v30M20 200h30M350 200h30" opacity=".6"/>
+          <svg x="80" y="80" width="240" height="240" viewBox="0 0 64 64" stroke-width=".6">${icons[t.icon].replace(/^<svg[^>]*>|<\/svg>$/g, "")}</svg>
+        </svg>
+      </div>
+    </article>`).join("");
+
+  /* Recap list */
+  document.getElementById("recap").innerHTML = topics.map((t, i) => `
+    <a href="${t.url}" style="${cs(t.cat)}">
+      <span class="n">${String(i + 1).padStart(2, "0")}</span>
+      <span class="t" style="color:var(--c)">${esc(t.short)}</span>
+      <span class="d">${esc(t.remember)}</span>
+      <span class="arr">→</span>
+    </a>`).join("");
+})();
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
