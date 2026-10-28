@@ -80,11 +80,11 @@
         <div class="wrap">
           <div>
             <a class="brand" href="${root}index.html"><span>Quá<b>Hay</b></span></a>
-            <p style="margin-top:12px">Những điều thú vị và các sự thật bị hiểu lầm, được kiểm chứng bằng nguồn tham khảo và kể lại bằng nét vẽ phát sáng. Đủ dài để tranh luận cả buổi, đủ chắc để không bị “bắt bài”.</p>
+            <p style="margin-top:12px">Lần theo những chuyện ai cũng tưởng là thật. Bài nào cũng kèm nguồn để bạn tự kiểm tra lại.</p>
           </div>
           <div><h4>Chủ đề</h4><ul>${list}</ul></div>
           <div><h4>Danh mục</h4><ul>${cats}</ul></div>
-          <p class="note">Mã nguồn mở, chạy trên GitHub Pages. Tài nguyên miễn phí: phông chữ <a href="https://github.com/google/fonts">Space Grotesk &amp; Be Vietnam Pro</a> (SIL Open Font License), tìm kiếm mờ <a href="https://github.com/krisk/Fuse">Fuse.js</a> (Apache 2.0). Toàn bộ minh họa là SVG tự vẽ. Nội dung mang tính phổ biến kiến thức; mỗi bài đều kèm nguồn để bạn tự kiểm chứng.</p>
+          <p class="note">Mã nguồn mở, chạy trên GitHub Pages. Tài nguyên miễn phí: phông chữ <a href="https://github.com/google/fonts">Space Grotesk &amp; Be Vietnam Pro</a> (SIL Open Font License), tìm kiếm mờ <a href="https://github.com/krisk/Fuse">Fuse.js</a> (Apache 2.0). Minh họa là SVG tự vẽ. Nếu thấy chỗ nào sai hoặc thiếu nguồn, hãy <a href="https://github.com/Fatalshears/quahay/issues">mở issue trên GitHub</a>.</p>
         </div>
       </footer>`);
   }

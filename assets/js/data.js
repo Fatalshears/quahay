@@ -42,7 +42,7 @@
     },
     {
       slug: "nap-chai-21-rang", url: "topics/nap-chai-21-rang.html", cat: "food", icon: "cap", read: 8,
-      title: "Nắp chai bia thường có 21 răng cưa — nhưng con số 21 chẳng có gì huyền bí",
+      title: "Nắp chai bia thường có 21 răng cưa, nhưng không phải vì con số 21 có ý nghĩa đặc biệt",
       short: "Nắp chai 21 răng",
       myth: "Con số 21 trên nắp chai bia ẩn chứa một quy luật toán học đặc biệt, và mọi nắp chai đều phải như vậy.",
       fact: "Nắp kiểu crown cap ban đầu có 24 răng. Con số 21 trở nên phổ biến vì cân bằng giữa độ kín, độ dễ mở và dây chuyền sản xuất, không phải quy luật bắt buộc.",

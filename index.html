@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.classList.add("js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quá Hay — Những điều thú vị &amp; sự thật bị hiểu lầm</title>
   <meta name="description" content="Tuyển tập những điều thú vị và các lầm tưởng phổ biến, được kiểm chứng bằng nguồn tham khảo và minh họa bằng nét vẽ phát sáng. Chủ đề cho mọi bàn nhậu và bữa tiệc.">
@@ -21,11 +22,12 @@
   <section class="hero">
     <div class="wrap">
       <div class="reveal">
-        <span class="tag">Phòng thí nghiệm của sự tò mò</span>
-        <h1 style="margin-top:18px">Điều bạn tin<br>có thể <em>sai</em>.<br>Và điều đó<br><em>quá hay</em>.</h1>
-        <p class="lead">Những lầm tưởng ai cũng từng nghe, những chi tiết nhỏ ít ai để ý, được kiểm chứng bằng tài liệu gốc và kể lại bằng nét vẽ phát sáng. Mỗi chủ đề đủ dài để bạn mang ra bàn nhậu và tranh luận đến khi hết bia.</p>
+        <span class="tag">Lầm tưởng &amp; sự thật</span>
+        <h1 style="margin-top:18px">Ủa, vậy mà lâu nay mình <em>tưởng thật</em>?</h1>
+        <p class="lead">Có những chuyện chúng ta tin suốt nhiều năm, cho đến khi thử tìm hiểu xem chúng bắt nguồn từ đâu.</p>
+        <p class="lead">Ở đây, chúng ta lần theo những lầm tưởng, những sự thật ít người biết và cả những chi tiết nhỏ tưởng chẳng có gì đáng nói. Có tài liệu thì dẫn tài liệu. Có gì đáng ngờ thì nói rõ. Còn chuyện đúng hay sai, cứ xem bằng chứng rồi bàn tiếp.</p>
         <div class="hero-actions">
-          <a class="btn" href="#kham-pha">Bắt đầu khám phá
+          <a class="btn" href="#kham-pha">Xem các chủ đề
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
           <button class="btn ghost" type="button" data-open-search>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Tìm chủ đề</button>
@@ -43,15 +45,15 @@
     <div class="wrap">
       <div class="section-head" id="kham-pha">
         <div>
-          <span class="eyebrow">Thư viện chủ đề</span>
-          <h2>Chọn một điều để nghi ngờ</h2>
+          <span class="eyebrow">Các chủ đề</span>
+          <h2>Bắt đầu từ chuyện bạn từng tin</h2>
         </div>
-        <p>Lọc theo danh mục: màu nền sẽ đổi theo bảng màu của từng lĩnh vực. Gõ không dấu cũng tìm được.</p>
+        <p>Lọc theo danh mục hoặc gõ từ khóa, có dấu hay không dấu đều được.</p>
       </div>
       <label class="home-search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <span class="sr-only">Tìm trong thư viện</span>
-        <input id="home-q" type="search" placeholder="Thử gõ: “nasa”, “bia”, “lich su”, “nao”…" autocomplete="off">
+        <input id="home-q" type="search" placeholder="Ví dụ: nasa, bia, lich su, nao…" autocomplete="off">
       </label>
       <div class="chips" id="chips" role="group" aria-label="Lọc theo danh mục" style="margin:22px 0 28px"></div>
       <div class="grid" id="grid"></div>
@@ -59,29 +61,15 @@
     </div>
   </section>
 
-  <!-- SCROLL STORY -->
-  <section class="story" aria-label="Lướt nhanh qua từng chủ đề">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Cuộn để đổi màu</span>
-          <h2>Lầm tưởng · Sự thật</h2>
-        </div>
-        <p>Phiên bản rút gọn để bạn “khoe” trong 30 giây. Bấm vào từng chủ đề để có đủ lý lẽ cho 30 phút tiếp theo.</p>
-      </div>
-      <div id="story"></div>
-    </div>
-  </section>
 
   <!-- RECAP -->
-  <section class="section" id="tong-ket" data-zone="space">
+  <section class="section" id="tong-ket">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Tổng kết</span>
-          <h2>Những câu chuyện đáng lưu lại</h2>
+          <span class="eyebrow">Tóm tắt</span>
+          <h2>Mỗi chủ đề, một câu</h2>
         </div>
-        <p>Một câu cho mỗi chủ đề: điều cần nhớ nếu bạn chỉ có một hơi để nói.</p>
       </div>
       <div class="recap" id="recap"></div>
     </div>
@@ -100,7 +88,7 @@
   const usedCats = Object.keys(categories).filter((k) => topics.some((t) => t.cat === k));
   const minutes = topics.reduce((s, t) => s + t.read, 0);
   document.getElementById("hero-stats").innerHTML =
-    `<div><b>${topics.length}</b>chủ đề</div><div><b>${usedCats.length}</b>danh mục</div><div><b>${minutes}’</b>đọc &amp; tranh luận</div>`;
+    `<div><b>${topics.length}</b>chủ đề</div><div><b>${usedCats.length}</b>danh mục</div><div><b>${minutes}</b>phút đọc</div>`;
 
   /* Hero orbit: one glowing node per topic */
   const cx = 250, cy = 250, R = 188;
@@ -134,6 +122,9 @@
   document.querySelectorAll(".hero-node").forEach((n) => {
     n.addEventListener("mouseenter", () => (document.body.dataset.theme = n.dataset.cat));
     n.addEventListener("focus", () => (document.body.dataset.theme = n.dataset.cat));
+    const reset = () => (document.body.dataset.theme = cat === "all" ? "space" : cat);
+    n.addEventListener("mouseleave", reset);
+    n.addEventListener("blur", reset);
   });
 
   /* Grid of cards */
@@ -152,11 +143,8 @@
   const chips = document.getElementById("chips");
   const counts = (k) => topics.filter((t) => t.cat === k).length;
   chips.innerHTML = `<button class="chip" data-cat="all" aria-pressed="true" style="--c:#F8FAFC"><i></i>Tất cả <small>${topics.length}</small></button>` +
-    Object.entries(categories).map(([k, c]) => {
-      const n = counts(k);
-      return `<button class="chip" data-cat="${k}" aria-pressed="false" style="${cs(k)}" ${n ? "" : 'disabled title="Sắp có"'}><i></i>${esc(c.name)} <small>${n || "sắp có"}</small></button>`;
-    }).join("");
-  chips.querySelectorAll("[disabled]").forEach((b) => (b.style.opacity = ".45"));
+    Object.entries(categories).filter(([k]) => counts(k)).map(([k, c]) =>
+      `<button class="chip" data-cat="${k}" aria-pressed="false" style="${cs(k)}"><i></i>${esc(c.name)} <small>${counts(k)}</small></button>`).join("");
 
   const q = document.getElementById("home-q"), empty = document.getElementById("grid-empty");
   let cat = "all";
@@ -178,7 +166,7 @@
     if (push) history.replaceState(null, "", k === "all" ? location.pathname + "#danh-muc" : `?cat=${k}#danh-muc`);
     apply();
   }
-  chips.addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b && !b.disabled) setCat(b.dataset.cat, true); });
+  chips.addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b) setCat(b.dataset.cat, true); });
   q.addEventListener("input", apply);
   q.addEventListener("keydown", (e) => {
     if (e.key === "Enter") { const first = grid.querySelector(".card:not([hidden])"); if (first) location.href = first.href; }
@@ -188,28 +176,6 @@
     if (k && categories[k] && counts(k)) setCat(k, false);
   });
 
-  /* Scroll story: each item switches the page palette */
-  document.getElementById("story").innerHTML = topics.map((t, i) => `
-    <article class="story-item" data-zone="${t.cat}">
-      <div class="reveal">
-        <div class="story-num">${String(i + 1).padStart(2, "0")}</div>
-        <span class="tag">${esc(categories[t.cat].name)}</span>
-        <h3>${esc(t.title)}</h3>
-        <div class="vs">
-          <div class="is-myth"><b>Lầm tưởng</b>${esc(t.myth)}</div>
-          <div class="is-fact"><b>Sự thật</b>${esc(t.fact)}</div>
-        </div>
-        <a class="btn ghost" href="${t.url}">Đọc toàn bộ câu chuyện →</a>
-      </div>
-      <div class="story-art">
-        <svg class="art draw glow" viewBox="0 0 400 400" aria-hidden="true">
-          <circle class="m" cx="200" cy="200" r="180" stroke-dasharray="2 8"/>
-          <circle class="a" cx="200" cy="200" r="150" opacity=".35"/>
-          <path class="p" d="M200 20v30M200 350v30M20 200h30M350 200h30" opacity=".6"/>
-          <svg x="80" y="80" width="240" height="240" viewBox="0 0 64 64" stroke-width=".6">${icons[t.icon].replace(/^<svg[^>]*>|<\/svg>$/g, "")}</svg>
-        </svg>
-      </div>
-    </article>`).join("");
 
   /* Recap list */
   document.getElementById("recap").innerHTML = topics.map((t, i) => `
