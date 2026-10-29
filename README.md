@@ -17,6 +17,8 @@ assets/vendor/fuse.min.js   Fuse.js v7.0.0 (Apache 2.0), tải từ github.com/k
 
 ## Thêm chủ đề mới
 
+Trước khi viết, đọc [quy tắc nội dung và trình bày](docs/QUY-TAC-NOI-DUNG.md) và chạy checklist ở cuối file.
+
 1. Sao chép một trang trong `topics/` làm khung, đổi `data-slug`, `data-theme` và nội dung.
 2. Thêm một mục vào `QH.topics` trong `assets/js/data.js` (slug, url, cat, icon, title, short, myth, fact, remember, tags).
 3. Nếu cần icon mới, thêm SVG 64×64 vào `QH.icons` (dùng class `ic-l`, `ic-a`, `ic-t` để tự nhận màu danh mục).

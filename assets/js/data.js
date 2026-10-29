@@ -33,7 +33,7 @@
   const topics = [
     {
       slug: "maslow", url: "topics/maslow.html", cat: "body", icon: "maslow", read: 9,
-      title: "Tháp nhu cầu Maslow có thể không phải là kim tự tháp",
+      title: "Maslow chưa từng vẽ chiếc kim tự tháp mang tên mình",
       short: "Tháp Maslow",
       myth: "Abraham Maslow đã tạo ra mô hình kim tự tháp 5 tầng quen thuộc.",
       fact: "Bài báo gốc năm 1943 không có hình kim tự tháp nào. Hình tam giác 5 tầng được các tác giả sách quản trị dựng lên khoảng 15–20 năm sau.",
@@ -42,10 +42,10 @@
     },
     {
       slug: "nap-chai-21-rang", url: "topics/nap-chai-21-rang.html", cat: "food", icon: "cap", read: 8,
-      title: "Nắp chai bia thường có 21 răng cưa, nhưng không phải vì con số 21 có ý nghĩa đặc biệt",
+      title: "21 răng cưa trên nắp chai bia: bài toán cơ khí đằng sau một con số tưởng như bí ẩn",
       short: "Nắp chai 21 răng",
-      myth: "Con số 21 trên nắp chai bia ẩn chứa một quy luật toán học đặc biệt, và mọi nắp chai đều phải như vậy.",
-      fact: "Nắp kiểu crown cap ban đầu có 24 răng. Con số 21 trở nên phổ biến vì cân bằng giữa độ kín, độ dễ mở và dây chuyền sản xuất, không phải quy luật bắt buộc.",
+      myth: "Con số 21 trên nắp chai bia ẩn chứa một quy luật toán học, chẳng hạn phải chia hết cho 3 để chịu lực đều, và mọi nắp chai đều phải như vậy.",
+      fact: "Nắp crown cap năm 1892 có 24 răng. Khoảng thập niên 1930, thử nghiệm cho thấy nắp 24 răng siết quá chặt và khó mở, nên 21 răng được chọn và về sau đưa vào tiêu chuẩn công nghiệp.",
       remember: "21 răng cưa là thiết kế phổ biến, không phải quy luật phổ quát.",
       tags: ["nắp chai", "bia", "crown cap", "William Painter", "thiết kế công nghiệp", "Gillette", "răng cưa", "đồ vật"]
     },
