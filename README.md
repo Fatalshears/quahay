@@ -23,7 +23,7 @@ Trước khi viết, đọc [quy tắc nội dung và trình bày](docs/QUY-TAC-
 2. Thêm một mục vào `QH.topics` trong `assets/js/data.js` (slug, url, cat, icon, title, short, myth, fact, remember, tags).
 3. Nếu cần icon mới, thêm SVG 64×64 vào `QH.icons` (dùng class `ic-l`, `ic-a`, `ic-t` để tự nhận màu danh mục).
 
-Danh mục có sẵn: `body`, `space`, `nature`, `history`, `tech`, `food`. Danh mục chưa có bài sẽ hiển thị “sắp có”.
+Danh mục có sẵn: `body`, `space`, `nature`, `history`, `tech`, `food`. Danh mục chưa có bài sẽ được ẩn khỏi bộ lọc.
 
 ## Chạy thử
 
