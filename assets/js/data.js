@@ -1,5 +1,7 @@
 /* Quá Hay — content index: categories, topics, line-art icons.
-   Add a new topic: create topics/<slug>.html, then add an entry to QH.topics. */
+   Add a new topic: create topics/<slug>.html, then add an entry to QH.topics.
+   type "myth": a widespread misconception is the subject; needs `myth` (the belief) and `fact`.
+   type "fact": an interesting-knowledge piece; needs `hook` (teaser) and `fact`. */
 (function () {
   const categories = {
     body:    { name: "Cơ thể & Não bộ",      sub: "Sinh học · Y học · Tâm lý",   primary: "#FF5C35", accent: "#FFB800", bg: "#140B0D" },
@@ -32,7 +34,7 @@
 
   const topics = [
     {
-      slug: "maslow", url: "topics/maslow.html", cat: "body", icon: "maslow", read: 9,
+      type: "myth", slug: "maslow", url: "topics/maslow.html", cat: "body", icon: "maslow", read: 9,
       title: "Maslow chưa từng vẽ chiếc kim tự tháp mang tên mình",
       short: "Tháp Maslow",
       myth: "Abraham Maslow đã tạo ra mô hình kim tự tháp 5 tầng quen thuộc.",
@@ -41,16 +43,16 @@
       tags: ["tâm lý học", "quản trị", "động lực", "nhu cầu", "kim tự tháp", "Abraham Maslow", "1943", "McDermid", "hierarchy of needs"]
     },
     {
-      slug: "nap-chai-21-rang", url: "topics/nap-chai-21-rang.html", cat: "food", icon: "cap", read: 8,
-      title: "21 răng cưa trên nắp chai bia: bài toán cơ khí đằng sau một con số tưởng như bí ẩn",
+      type: "fact", slug: "nap-chai-21-rang", url: "topics/nap-chai-21-rang.html", cat: "food", icon: "cap", read: 8,
+      title: "Vì sao nắp chai bia thường có 21 răng cưa?",
       short: "Nắp chai 21 răng",
-      myth: "Con số 21 trên nắp chai bia ẩn chứa một quy luật toán học, chẳng hạn phải chia hết cho 3 để chịu lực đều, và mọi nắp chai đều phải như vậy.",
+      hook: "Cầm một cái nắp chai bia lên đếm thử, nhiều khả năng bạn sẽ đếm được 21 răng. Con số đó được chọn sau nhiều thập kỷ dùng thiết kế 24 răng.",
       fact: "Nắp crown cap năm 1892 có 24 răng. Khoảng thập niên 1930, thử nghiệm cho thấy nắp 24 răng siết quá chặt và khó mở, nên 21 răng được chọn và về sau đưa vào tiêu chuẩn công nghiệp.",
       remember: "21 răng cưa là thiết kế phổ biến, không phải quy luật phổ quát.",
       tags: ["nắp chai", "bia", "crown cap", "William Painter", "thiết kế công nghiệp", "Gillette", "răng cưa", "đồ vật"]
     },
     {
-      slug: "van-ly-truong-thanh", url: "topics/van-ly-truong-thanh.html", cat: "space", icon: "wall", read: 8,
+      type: "myth", slug: "van-ly-truong-thanh", url: "topics/van-ly-truong-thanh.html", cat: "space", icon: "wall", read: 8,
       title: "Vạn Lý Trường Thành không thể nhìn thấy bằng mắt thường từ Mặt Trăng",
       short: "Vạn Lý Trường Thành",
       myth: "Vạn Lý Trường Thành là công trình nhân tạo duy nhất nhìn thấy được từ Mặt Trăng.",
@@ -59,7 +61,7 @@
       tags: ["Trung Quốc", "NASA", "không gian", "phi hành gia", "Mặt Trăng", "quỹ đạo", "độ phân giải mắt", "Great Wall"]
     },
     {
-      slug: "napoleon", url: "topics/napoleon.html", cat: "history", icon: "napoleon", read: 8,
+      type: "myth", slug: "napoleon", url: "topics/napoleon.html", cat: "history", icon: "napoleon", read: 8,
       title: "Napoleon Bonaparte có thể không hề thấp bé như hình ảnh phổ biến",
       short: "Napoleon",
       myth: "Napoleon là một nhà lãnh đạo thấp bé bất thường so với đàn ông cùng thời.",
@@ -68,7 +70,7 @@
       tags: ["Pháp", "lịch sử", "chiều cao", "đơn vị đo", "biếm họa", "Gillray", "petit caporal", "Napoleon complex"]
     },
     {
-      slug: "10-phan-tram-nao", url: "topics/10-phan-tram-nao.html", cat: "body", icon: "brain", read: 8,
+      type: "myth", slug: "10-phan-tram-nao", url: "topics/10-phan-tram-nao.html", cat: "body", icon: "brain", read: 8,
       title: "Con người không chỉ sử dụng 10% bộ não",
       short: "10% bộ não",
       myth: "Chúng ta chỉ dùng 10% bộ não; 90% còn lại đang chờ được “khai phá” để tạo ra siêu năng lực.",
@@ -77,10 +79,10 @@
       tags: ["não bộ", "thần kinh", "fMRI", "neuromyth", "Lucy", "Limitless", "William James", "khoa học"]
     },
     {
-      slug: "bia", url: "topics/bia.html", cat: "food", icon: "beer", read: 14,
+      type: "fact", slug: "bia", url: "topics/bia.html", cat: "food", icon: "beer", read: 14,
       title: "Bia không chỉ để “đếm lon”: lịch sử, nguyên liệu và 4 dòng bia nên biết",
       short: "Thế giới bia",
-      myth: "Bia nào cũng như nhau, chỉ khác nhãn mác; uống bia là để “trăm phần trăm” và đếm lon.",
+      hook: "Luật bia năm 1516 của Bavaria chỉ cho phép ba nguyên liệu, và loại bia vàng quen thuộc ở Việt Nam chỉ là một trong hàng trăm phong cách bia.",
       fact: "Bia là cả một họ thức uống với hàng trăm phong cách. Loại bia vàng nhạt quen thuộc ở Việt Nam chỉ là một nhánh (pale lager) bên cạnh IPA, Stout, Ale Bỉ và nhiều dòng khác.",
       remember: "Bia phổ thông chỉ là một nhánh nhỏ trong cây phả hệ bia.",
       tags: ["bia", "lager", "pilsner", "IPA", "stout", "porter", "ale", "Bỉ", "Reinheitsgebot", "Hội Đồng Cừu", "BJCP", "hoa bia", "mạch nha", "nitro"]

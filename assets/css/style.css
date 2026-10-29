@@ -430,3 +430,12 @@ table.data tr:last-child td { border-bottom: 0; }
 .ic-l { stroke: var(--c, var(--primary)); }
 .ic-a { stroke: var(--c2, var(--accent)); }
 .ic-t { fill: var(--c, var(--primary)); stroke: none; font-family: var(--font-head); }
+
+/* Quick facts: opening block for knowledge (non-myth) topics */
+.quick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0 8px; }
+.quick > div { position: relative; padding: 24px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); }
+.quick > div:first-child { border-color: color-mix(in srgb, var(--primary) 50%, transparent); background: color-mix(in srgb, var(--primary) 6%, transparent); }
+.quick-n { display: block; font: 700 13px var(--font-head); letter-spacing: .14em; color: var(--primary); margin-bottom: 10px; }
+.quick h2 { font-size: 19px; margin: 0 0 8px; }
+.quick p { margin: 0; font-size: 15.5px; line-height: 1.6; }
+@media (max-width: 900px) { .quick { grid-template-columns: 1fr; } }

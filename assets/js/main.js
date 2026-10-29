@@ -92,7 +92,7 @@
   /* ---------- Search ---------- */
   const docs = topics.map((t) => ({
     t,
-    title: norm(t.title), short: norm(t.short), myth: norm(t.myth), fact: norm(t.fact),
+    title: norm(t.title), short: norm(t.short), myth: norm(t.myth || t.hook), fact: norm(t.fact),
     tags: norm(t.tags.join(" ")), cat: norm(categories[t.cat].name)
   }));
   let fuse = null;
@@ -161,7 +161,7 @@
         <li role="option"><a href="${root}${t.url}" class="${i === 0 ? "active" : ""}" style="${catStyle(t.cat)}">
           <span class="ico">${icons[t.icon]}</span>
           <span><span class="r-cat" style="color:var(--c)">${esc(categories[t.cat].name)}</span>
-          <span class="r-title">${highlight(t.title, q)}</span>${highlight(t.myth, q)}</span>
+          <span class="r-title">${highlight(t.title, q)}</span>${highlight(t.myth || t.hook, q)}</span>
         </a></li>`).join("");
     }
     function setActive(i) {

@@ -6,6 +6,18 @@ Nguyên tắc gốc: viết sao cho người đọc nghĩ “Khoan, chuyện nà
 
 ---
 
+## 0. Chọn dạng bài
+
+Có hai dạng bài. Chọn dạng trước khi viết và ghi vào trường `type` trong `assets/js/data.js`.
+
+0.1. **Bài lầm tưởng** (`type: "myth"`): chỉ dùng khi lầm tưởng đó **thật sự phổ biến** và có thể chỉ ra bằng chứng nó phổ biến (xuất hiện trong sách giáo khoa, giáo trình, khảo sát, phim ảnh, câu nói cửa miệng). Ví dụ: tháp Maslow, Vạn Lý Trường Thành nhìn thấy từ không gian, Napoleon thấp bé, con người chỉ dùng 10% bộ não. Bài lấy lầm tưởng làm chủ đề rồi đưa dẫn chứng phản biện.
+
+0.2. **Bài kiến thức** (`type: "fact"`): dùng cho chủ đề thú vị nhưng không có lầm tưởng phổ biến nào thật sự đáng phản bác. Ví dụ: vì sao nắp chai có 21 răng, lịch sử và các dòng bia. Bài trình bày kiến thức, không dựng lên một “lầm tưởng” để bác bỏ.
+
+0.3. Không gượng ép. Nếu phải tự nghĩ ra câu lầm tưởng (“bia nào cũng như nhau”, “số 21 ẩn chứa quy luật toán học”) thì đó là bài kiến thức. Một lời đồn nhỏ hoặc một chỗ nguồn tham khảo bị sai vẫn có thể được đính chính trong thân bài kiến thức, nhưng không được đưa lên làm khung bài.
+
+0.4. Tiêu đề, sapo và thẻ bài trên trang chủ phải theo đúng dạng: bài kiến thức không dùng chữ “lầm tưởng”, “tưởng như”, “hóa ra” để tạo cảm giác đang bóc mẽ.
+
 ## 1. Giọng văn
 
 1.1. Viết như một người kể chuyện có hiểu biết, nói thẳng vào việc. Câu ngắn, nhịp nhanh.
@@ -54,13 +66,15 @@ Nguyên tắc gốc: viết sao cho người đọc nghĩ “Khoan, chuyện nà
 
 ## 4. Phần mở đầu bài
 
-Mỗi bài mở đầu bằng 4 khối: sapo (`.dek`), Lầm tưởng, Sự thật, Điểm thú vị.
+Bài lầm tưởng mở đầu bằng 4 khối: sapo (`.dek`), Lầm tưởng, Sự thật, Điểm thú vị (`.verdict`).
 
-4.1. Bốn khối này không được lặp ý hay lặp cấu trúc liệt kê của nhau. Mỗi khối phải đưa thêm một thông tin mới. Nếu sapo đã nêu “kín, dễ mở, dây chuyền” thì Điểm thú vị phải nói chuyện khác (ví dụ: thiết kế ban đầu có 24 răng).
+Bài kiến thức mở đầu bằng sapo và khối “điểm nhanh” (`.quick`): ba ô đánh số, mỗi ô một tiêu đề ngắn và một câu, nêu ba điều đáng nhớ nhất của bài. Trên trang chủ, thẻ bài kiến thức dùng trường `hook` với nhãn “Bạn có biết:”, thay cho “Lầm tưởng:”.
 
-4.2. Lầm tưởng phải nêu cụ thể lời đồn đang bị phản bác (ví dụ “phải chia hết cho 3 để chịu lực đều”), không viết chung chung (“một quy luật toán học bí ẩn”).
+4.1. Các khối mở đầu không được lặp ý hay lặp cấu trúc liệt kê của nhau. Mỗi khối phải đưa thêm một thông tin mới. Nếu sapo đã nêu “kín, dễ mở, dây chuyền” thì Điểm thú vị phải nói chuyện khác (ví dụ: thiết kế ban đầu có 24 răng).
 
-4.3. Mọi lời đồn nêu trong phần Lầm tưởng phải được nhắc lại và xử lý trong thân bài.
+4.2. (Bài lầm tưởng) Lầm tưởng phải nêu cụ thể lời đồn đang bị phản bác (ví dụ “phải chia hết cho 3 để chịu lực đều”), không viết chung chung (“một quy luật toán học bí ẩn”).
+
+4.3. (Bài lầm tưởng) Mọi lời đồn nêu trong phần Lầm tưởng phải được nhắc lại và xử lý trong thân bài.
 
 4.4. Sapo mở bằng một hành động hoặc một sự kiện cụ thể người đọc tự kiểm tra được (“Thử mở bài báo gốc năm 1943 ra đọc thì không thấy hình nào cả”), không mở bằng nhận định chung chung.
 
@@ -130,8 +144,8 @@ Mỗi bài mở đầu bằng 4 khối: sapo (`.dek`), Lầm tưởng, Sự th�
 ## 9. Cấu trúc một bài
 
 1. `<h1>`, sapo, dòng meta, minh họa chính.
-2. Lầm tưởng / Sự thật / Điểm thú vị.
-3. Thân bài theo trình tự điều tra: nguồn gốc → nội dung thật → ai/cái gì tạo ra lầm tưởng → vì sao nó phổ biến → góc nhìn hiện nay.
+2. Bài lầm tưởng: Lầm tưởng / Sự thật / Điểm thú vị. Bài kiến thức: ba điểm nhanh.
+3. Thân bài. Bài lầm tưởng theo trình tự điều tra: nguồn gốc → nội dung thật → ai/cái gì tạo ra lầm tưởng → vì sao nó phổ biến → góc nhìn hiện nay. Bài kiến thức theo trình tự giải thích: bối cảnh → cơ chế hoặc lịch sử → chi tiết đáng chú ý → giới hạn, ngoại lệ.
 4. Ít nhất một hình tương tác hoặc biểu đồ giúp hiểu vấn đề.
 5. Hộp “Lưu ý kiểm chứng”.
 6. Góc bàn nhậu.
@@ -142,8 +156,9 @@ Mỗi bài mở đầu bằng 4 khối: sapo (`.dek`), Lầm tưởng, Sự th�
 ## Checklist trước khi đăng
 
 - [ ] Tiêu đề khớp mức độ bằng chứng, không lặp từ, không “luôn/mọi” khi có ngoại lệ; giống nhau ở `data.js`, `<title>`, `<h1>`.
-- [ ] Sapo, Lầm tưởng, Sự thật, Điểm thú vị không lặp ý.
-- [ ] Lời đồn trong phần Lầm tưởng được nêu cụ thể và xử lý trong thân bài.
+- [ ] Đã chọn đúng dạng bài: chỉ dùng dạng lầm tưởng khi lầm tưởng thật sự phổ biến; `type` trong `data.js` khớp với trang.
+- [ ] Các khối mở đầu (sapo và verdict hoặc điểm nhanh) không lặp ý.
+- [ ] (Bài lầm tưởng) Lời đồn được nêu cụ thể và xử lý trong thân bài.
 - [ ] Không có slogan, câu mở làm màu, câu chốt gây cười, trích dẫn tự đặt.
 - [ ] Không có câu dịch sát tiếng Anh; thuật ngữ có giải thích ở lần đầu.
 - [ ] Mọi khái niệm được giới thiệu trước khi đính chính; phân loại nêu rõ tiêu chí.

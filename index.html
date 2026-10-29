@@ -22,7 +22,7 @@
   <section class="hero">
     <div class="wrap">
       <div class="reveal">
-        <span class="tag">Lầm tưởng &amp; sự thật</span>
+        <span class="tag">Lầm tưởng &amp; chuyện ít người biết</span>
         <h1 style="margin-top:18px">Ủa, vậy mà lâu nay mình <em>tưởng thật</em>?</h1>
         <p class="lead">Có những chuyện chúng ta tin suốt nhiều năm, cho đến khi thử tìm hiểu xem chúng bắt nguồn từ đâu.</p>
         <p class="lead">Ở đây, chúng ta lần theo những lầm tưởng, những sự thật ít người biết và cả những chi tiết nhỏ tưởng chẳng có gì đáng nói. Có tài liệu thì dẫn tài liệu. Có gì đáng ngờ thì nói rõ. Còn chuyện đúng hay sai, cứ xem bằng chứng rồi bàn tiếp.</p>
@@ -46,7 +46,7 @@
       <div class="section-head" id="kham-pha">
         <div>
           <span class="eyebrow">Các chủ đề</span>
-          <h2>Bắt đầu từ chuyện bạn từng tin</h2>
+          <h2>Chọn một chuyện để đọc</h2>
         </div>
         <p>Lọc theo danh mục hoặc gõ từ khóa, có dấu hay không dấu đều được.</p>
       </div>
@@ -134,8 +134,8 @@
       <div class="card-art">${icons[t.icon]}</div>
       <span class="tag">${esc(categories[t.cat].name)}</span>
       <h3>${esc(t.title)}</h3>
-      <p class="myth"><b>Lầm tưởng:</b> ${esc(t.myth)}</p>
-      <div class="meta"><span>${t.read} phút đọc</span><span>Đọc sự thật →</span></div>
+      <p class="myth">${t.type === "myth" ? `<b>Lầm tưởng:</b> ${esc(t.myth)}` : `<b>Bạn có biết:</b> ${esc(t.hook)}`}</p>
+      <div class="meta"><span>${t.read} phút đọc</span><span>${t.type === "myth" ? "Đọc sự thật" : "Đọc tiếp"} →</span></div>
     </a>`).join("");
   grid.querySelectorAll(".card-art svg").forEach((s) => s.classList.add("draw"));
 
