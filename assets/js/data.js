@@ -29,6 +29,9 @@
     wall: `<svg class="art" viewBox="0 0 64 64"><circle class="ic-a" cx="50" cy="13" r="7"/><path class="ic-a" d="M47 10a5 5 0 0 0 6 7" opacity=".6"/><path class="ic-l" d="M2 50l10-12 8 6 10-14 10 12 8-6 14 14"/><path class="ic-l" d="M8 44v-3h3v2h3v-3h3v3" opacity=".7"/><path class="ic-l" d="M26 36v-3h3v2h3v-3h3v3" opacity=".7"/><path class="ic-l" d="M2 58h60" opacity=".4"/></svg>`,
     napoleon: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M6 34c6-14 18-20 26-20s20 6 26 20c-8-3-17-4-26-4s-18 1-26 4z"/><circle class="ic-a" cx="32" cy="22" r="3.5"/><path class="ic-l" d="M10 44h44" opacity=".55"/><path class="ic-l" d="M10 41v6M19 42v4M28 41v6M37 42v4M46 41v6M54 42v4" opacity=".55"/><text x="32" y="60" text-anchor="middle" class="ic-t" font-size="9" font-weight="600">1,69 m</text></svg>`,
     brain: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M30 12c-6-4-14-1-15 5-6 1-9 7-6 12-4 4-2 11 3 13 0 6 6 9 11 7 3 4 7 4 7 4V12z"/><path class="ic-l" d="M34 12c6-4 14-1 15 5 6 1 9 7 6 12 4 4 2 11-3 13 0 6-6 9-11 7-3 4-7 4-7 4V12z"/><path class="ic-a" d="M16 24c4 0 6 2 7 5M14 36c4-1 7 0 9 3M48 24c-4 0-6 2-7 5M50 36c-4-1-7 0-9 3M24 46c2-3 4-4 6-4M40 46c-2-3-4-4-6-4"/></svg>`,
+    oxford: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M10 56V30l8-10 8 10v26M38 56V30l8-10 8 10v26"/><path class="ic-l" d="M26 56V36a6 6 0 0 1 12 0v20M6 56h52"/><path class="ic-a" d="M18 20V8M46 20V8M14 40h8M42 40h8" opacity=".8"/></svg>`,
+    venus: `<svg class="art" viewBox="0 0 64 64"><circle class="ic-a" cx="32" cy="32" r="26" stroke-dasharray="2 5"/><circle class="ic-l" cx="32" cy="32" r="13"/><path class="ic-l" d="M22 26c6 2 14 2 20-1M21 36c7 2 15 2 22-1" opacity=".55"/><path class="ic-a" d="M44 12a24 24 0 0 0-22-2l3-4M22 10l4 3"/></svg>`,
+    jelly: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M12 30a20 18 0 0 1 40 0c-4 3-8 3-10 0-3 3-7 3-10 0-3 3-7 3-10 0-2 3-6 3-10 0z"/><path class="ic-a" d="M22 33c-2 8 3 12 0 22M32 33c2 8-3 13 0 23M42 33c-2 8 3 12 0 22"/><path class="ic-l" d="M50 14a8 8 0 1 0 2 8M52 22l-3-1M52 22l1-3" opacity=".7"/></svg>`,
     beer: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M16 16h28l-3 42H19z"/><path class="ic-l" d="M44 24h6a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5h-6" opacity=".7"/><path class="ic-a" d="M14 16c0-6 5-8 9-6 2-4 8-5 11-1 3-3 10-1 10 5"/><circle class="ic-a" cx="26" cy="44" r="1.6"/><circle class="ic-a" cx="33" cy="36" r="1.6"/><circle class="ic-a" cx="29" cy="28" r="1.3"/><circle class="ic-a" cx="35" cy="48" r="1.2"/></svg>`
   };
 
@@ -86,6 +89,33 @@
       fact: "Bia là cả một họ thức uống với hàng trăm phong cách. Loại bia vàng nhạt quen thuộc ở Việt Nam chỉ là một nhánh (pale lager) bên cạnh IPA, Stout, Ale Bỉ và nhiều dòng khác.",
       remember: "Bia phổ thông chỉ là một nhánh nhỏ trong cây phả hệ bia.",
       tags: ["bia", "lager", "pilsner", "IPA", "stout", "porter", "ale", "Bỉ", "Reinheitsgebot", "Hội Đồng Cừu", "BJCP", "hoa bia", "mạch nha", "nitro"]
+    },
+    {
+      type: "fact", slug: "oxford-aztec", url: "topics/oxford-aztec.html", cat: "history", icon: "oxford", read: 8,
+      title: "Đại học Oxford lâu đời hơn Đế chế Aztec",
+      short: "Oxford và Aztec",
+      hook: "Oxford đã có người dạy học từ năm 1096. Đế chế Aztec, tức liên minh ba thành bang do Tenochtitlan đứng đầu, chỉ ra đời năm 1428.",
+      fact: "Hoạt động giảng dạy ở Oxford có từ năm 1096, hơn 300 năm trước khi Liên minh Tam Thành (Đế chế Aztec) được lập năm 1428, và hơn 200 năm trước khi người Mexica dựng kinh đô Tenochtitlan khoảng năm 1325.",
+      remember: "Oxford đã dạy học hơn 300 năm khi Đế chế Aztec mới ra đời.",
+      tags: ["Oxford", "Aztec", "Mexica", "Tenochtitlan", "Liên minh Tam Thành", "Triple Alliance", "đại học", "Quốc Tử Giám", "Bologna", "lịch sử thế giới", "dòng thời gian"]
+    },
+    {
+      type: "fact", slug: "ngay-sao-kim", url: "topics/ngay-sao-kim.html", cat: "space", icon: "venus", read: 8,
+      title: "Sao Kim tự quay một vòng lâu hơn một năm của nó",
+      short: "Ngày trên sao Kim",
+      hook: "Sao Kim mất khoảng 243 ngày Trái Đất để tự quay một vòng, nhưng chỉ cần 224,7 ngày để đi hết một vòng quanh Mặt Trời.",
+      fact: "Sao Kim tự quay một vòng (so với các vì sao) mất khoảng 243 ngày Trái Đất, dài hơn năm của nó (224,7 ngày) khoảng 18 ngày. Nó còn quay ngược chiều, nên Mặt Trời mọc ở phía tây, khoảng 117 ngày Trái Đất một lần.",
+      remember: "Một vòng tự quay của sao Kim dài hơn một năm của nó khoảng 18 ngày Trái Đất.",
+      tags: ["sao Kim", "Venus", "hành tinh", "NASA", "ESA", "Venus Express", "Magellan", "tự quay", "quỹ đạo", "nghịch hành", "ngày mặt trời", "thiên văn"]
+    },
+    {
+      type: "fact", slug: "sua-bat-tu", url: "topics/sua-bat-tu.html", cat: "nature", icon: "jelly", read: 8,
+      title: "Loài sứa có thể quay ngược vòng đời",
+      short: "Sứa “bất tử”",
+      hook: "Một loài sứa nhỏ cỡ vài milimét có thể biến từ con trưởng thành trở lại thành polyp non, rồi lớn lên lại từ đầu.",
+      fact: "Sứa Turritopsis dohrnii, khi bị tổn thương, đói hoặc gặp môi trường bất lợi, có thể co lại thành một khối mô rồi phát triển ngược thành polyp, nhờ các tế bào đã biệt hóa chuyển sang loại tế bào khác. Nó vẫn có thể chết vì bị ăn hoặc bệnh tật.",
+      remember: "Sứa Turritopsis dohrnii có thể quay ngược vòng đời, nhưng không bất tử theo nghĩa không thể chết.",
+      tags: ["sứa", "bất tử", "Turritopsis dohrnii", "Turritopsis nutricula", "polyp", "vòng đời", "chuyển biệt hóa", "transdifferentiation", "lão hóa", "sinh học biển", "PNAS", "thích ty bào"]
     }
   ];
 
