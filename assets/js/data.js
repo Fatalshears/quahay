@@ -32,6 +32,9 @@
     oxford: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M10 56V30l8-10 8 10v26M38 56V30l8-10 8 10v26"/><path class="ic-l" d="M26 56V36a6 6 0 0 1 12 0v20M6 56h52"/><path class="ic-a" d="M18 20V8M46 20V8M14 40h8M42 40h8" opacity=".8"/></svg>`,
     venus: `<svg class="art" viewBox="0 0 64 64"><circle class="ic-a" cx="32" cy="32" r="26" stroke-dasharray="2 5"/><circle class="ic-l" cx="32" cy="32" r="13"/><path class="ic-l" d="M22 26c6 2 14 2 20-1M21 36c7 2 15 2 22-1" opacity=".55"/><path class="ic-a" d="M44 12a24 24 0 0 0-22-2l3-4M22 10l4 3"/></svg>`,
     jelly: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M12 30a20 18 0 0 1 40 0c-4 3-8 3-10 0-3 3-7 3-10 0-3 3-7 3-10 0-2 3-6 3-10 0z"/><path class="ic-a" d="M22 33c-2 8 3 12 0 22M32 33c2 8-3 13 0 23M42 33c-2 8 3 12 0 22"/><path class="ic-l" d="M50 14a8 8 0 1 0 2 8M52 22l-3-1M52 22l1-3" opacity=".7"/></svg>`,
+    bean: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M14 36c-4-12 6-24 18-22 8 1 10 8 16 8 8 0 12 8 8 16-5 10-20 14-30 10-6-2-10-6-12-12z"/><path class="ic-l" d="M24 30c4-4 10-4 14 0" opacity=".55"/><circle class="ic-a" cx="48" cy="50" r="7"/><path class="ic-a" d="M45 50h6" opacity=".7"/><path class="ic-a" d="M38 56l-3 3M57 44l3-3" stroke-dasharray="2 3"/></svg>`,
+    ice: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M4 52l14-22 8 8 10-18 12 16 6-6 6 22z"/><path class="ic-l" d="M18 30l4 6M36 20l3 8" opacity=".55"/><path class="ic-a" d="M48 6v16M41 10l14 8M41 18l14-8"/><path class="ic-l" d="M4 58h56" opacity=".4"/></svg>`,
+    scream: `<svg class="art" viewBox="0 0 64 64"><rect class="ic-l" x="6" y="12" width="52" height="40" rx="4"/><path class="ic-l" d="M6 20h52M6 44h52" opacity=".5"/><path class="ic-a" d="M12 32h6l3-8 4 16 4-22 4 26 4-18 3 10 3-4h9"/></svg>`,
     beer: `<svg class="art" viewBox="0 0 64 64"><path class="ic-l" d="M16 16h28l-3 42H19z"/><path class="ic-l" d="M44 24h6a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5h-6" opacity=".7"/><path class="ic-a" d="M14 16c0-6 5-8 9-6 2-4 8-5 11-1 3-3 10-1 10 5"/><circle class="ic-a" cx="26" cy="44" r="1.6"/><circle class="ic-a" cx="33" cy="36" r="1.6"/><circle class="ic-a" cx="29" cy="28" r="1.3"/><circle class="ic-a" cx="35" cy="48" r="1.2"/></svg>`
   };
 
@@ -116,6 +119,33 @@
       fact: "Sứa Turritopsis dohrnii, khi bị tổn thương, đói hoặc gặp môi trường bất lợi, có thể co lại thành một khối mô rồi phát triển ngược thành polyp, nhờ các tế bào đã biệt hóa chuyển sang loại tế bào khác. Nó vẫn có thể chết vì bị ăn hoặc bệnh tật.",
       remember: "Sứa Turritopsis dohrnii có thể quay ngược vòng đời, nhưng không bất tử theo nghĩa không thể chết.",
       tags: ["sứa", "bất tử", "Turritopsis dohrnii", "Turritopsis nutricula", "polyp", "vòng đời", "chuyển biệt hóa", "transdifferentiation", "lão hóa", "sinh học biển", "PNAS", "thích ty bào"]
+    },
+    {
+      type: "fact", slug: "dau-tam-g6pd", url: "topics/dau-tam-g6pd.html", cat: "body", icon: "bean", read: 9,
+      title: "Một bữa đậu tằm có thể phá hủy hồng cầu của người thiếu men G6PD",
+      short: "Đậu tằm và G6PD",
+      hook: "Với người thiếu men G6PD, một bữa đậu tằm có thể làm vỡ hàng loạt hồng cầu chỉ trong một đến hai ngày. Bệnh này còn được gọi là bệnh “favism”.",
+      fact: "Đậu tằm chứa vicine và convicine, khi tiêu hóa tạo ra các chất oxy hóa mạnh. Hồng cầu bình thường tự bảo vệ được nhờ men G6PD; hồng cầu thiếu men này dễ bị phá hủy, gây thiếu máu tan máu cấp.",
+      remember: "Thiếu men G6PD khiến hồng cầu không chống được chất oxy hóa từ đậu tằm, một số loại thuốc và băng phiến.",
+      tags: ["đậu tằm", "fava", "favism", "G6PD", "thiếu men", "hồng cầu", "tan máu", "thiếu máu", "băng phiến", "long não", "sốt rét", "primaquine", "y học", "di truyền"]
+    },
+    {
+      type: "myth", slug: "nam-cuc-sa-mac", url: "topics/nam-cuc-sa-mac.html", cat: "nature", icon: "ice", read: 8,
+      title: "Sa mạc lớn nhất thế giới không phải Sahara mà là Nam Cực",
+      short: "Sa mạc Nam Cực",
+      myth: "Sahara là sa mạc lớn nhất thế giới.",
+      fact: "Hoang mạc được xác định theo lượng mưa, không theo cát hay nhiệt độ. Theo định nghĩa đó, Nam Cực (khoảng 14 triệu km²) là hoang mạc lớn nhất; Sahara (khoảng 9 triệu km²) là hoang mạc nóng lớn nhất.",
+      remember: "Nam Cực là hoang mạc lớn nhất; Sahara là hoang mạc nóng lớn nhất.",
+      tags: ["sa mạc", "hoang mạc", "Nam Cực", "Antarctica", "Sahara", "Bắc Cực", "lượng mưa", "băng", "Vostok", "địa lý", "khí hậu", "Atacama"]
+    },
+    {
+      type: "fact", slug: "wilhelm-scream", url: "topics/wilhelm-scream.html", cat: "history", icon: "scream", read: 7,
+      title: "Một tiếng hét đã xuất hiện trong hàng trăm bộ phim Hollywood",
+      short: "Wilhelm Scream",
+      hook: "Từ Star Wars, Indiana Jones đến Toy Story, khán giả đã nghe cùng một tiếng hét được ghi âm năm 1951.",
+      fact: "Tiếng hét Wilhelm được ghi âm cho phim Distant Drums (1951), đặt tên theo nhân vật binh nhì Wilhelm trong phim The Charge at Feather River (1953), và được nhà thiết kế âm thanh Ben Burtt đưa vào Star Wars (1977). Đến nay nó đã xuất hiện trong hàng trăm phim.",
+      remember: "Tiếng hét Wilhelm được ghi âm năm 1951 và được dùng lại trong hàng trăm phim như một trò đùa nội bộ.",
+      tags: ["Wilhelm scream", "tiếng hét", "hiệu ứng âm thanh", "Hollywood", "Star Wars", "Indiana Jones", "Toy Story", "Ben Burtt", "Sheb Wooley", "Distant Drums", "điện ảnh", "easter egg"]
     }
   ];
 
